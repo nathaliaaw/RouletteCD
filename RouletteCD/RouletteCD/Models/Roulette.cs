@@ -17,20 +17,8 @@ namespace RouletteCD.Models
 
         public List<ResultBet>? Result { get; set; }
 
-        //public Dictionary<string, double>? board  = new Dictionary<string, double>();
-        public List<BDataStructure> ? board { get; set; } 
+        public IDictionary<string,string> board { get; set; } = new Dictionary<string, string>();
+        
 
-
-        //public Roulette()
-        //{
-        //    this.Init();
-        //}
-        //private void Init()
-        //{
-        //    for (int i = 0; i < board.Length; i++)
-        //    {
-        //        board[i] = new Dictionary<string, double>();
-        //    }
-        //}
     }
 }
