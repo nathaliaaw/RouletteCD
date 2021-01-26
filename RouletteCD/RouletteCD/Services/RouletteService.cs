@@ -69,7 +69,7 @@ namespace RouletteCD.Services
             return rouletteRepository.Update(Id, roulette);
         }
 
-        public Roulette Bet(string Id,  BDataStructure request)
+        public Roulette betValues(string Id,  BDataStructure request)
         {
             if (request.moneyBet > 10000 || request.moneyBet < 1)
             {
@@ -85,12 +85,10 @@ namespace RouletteCD.Services
             {
                 throw new RouletteClosedException();
             }
-
-            double value = 0d;
-            //roulette.board.(UserId + "", value + moneyBet);
-            //roulette.board[position].TryGetValue(request.UserId, out value);
-            //roulette.board[position].Remove(request.UserId + "");
-            //roulette.board[position].TryAdd(request.UserId + "", value + request.moneyBet);
+            roulette.board.Add("numberBet", request.numberBet.ToString());
+            roulette.board.Add("moneyBet", request.moneyBet.ToString());
+            roulette.board.Add("colorBet", request.colorBet);
+            roulette.board.Add("UserId", request.UserId);
 
             return rouletteRepository.Update(roulette.idRoulette, roulette);
         }
