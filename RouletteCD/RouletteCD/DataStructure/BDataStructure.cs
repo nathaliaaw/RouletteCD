@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RouletteCD.DataStructure
 {
+    [Serializable]
     public class BDataStructure
     {
         [Range(0, 38)]
