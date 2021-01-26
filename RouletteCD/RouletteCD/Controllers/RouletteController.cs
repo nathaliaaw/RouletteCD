@@ -65,8 +65,8 @@ namespace RouletteCD.Controllers
                 return StatusCode(405);
             }
         }
-        [HttpPost("{id}/bet")]
-        public IActionResult Bet([FromRoute(Name = "id")] string id,
+        [HttpPost("{id}/betValues")]
+        public IActionResult betValues([FromRoute(Name = "id")] string id,
             [FromBody] BDataStructure request)
         {
             if (!ModelState.IsValid)
@@ -80,7 +80,7 @@ namespace RouletteCD.Controllers
 
             try
             {
-                Roulette roulette = rouletteService.Bet(id, request);
+                Roulette roulette = rouletteService.betValues(id, request);
                 return Ok(roulette);
             }
             catch (Exception e)
