@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EasyCaching.InMemory" Version="0.8.8" />
+    <PackageReference Include="EasyCaching.Redis" Version="0.8.8" />
+  </ItemGroup>
+
 
 </Project>

@@ -42,6 +42,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "EasyCaching.InMemory": {
+              "target": "Package",
+              "version": "[0.8.8, )"
+            },
+            "EasyCaching.Redis": {
+              "target": "Package",
+              "version": "[0.8.8, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
