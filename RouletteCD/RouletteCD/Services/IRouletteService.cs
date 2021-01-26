@@ -13,7 +13,7 @@ namespace RouletteCD.Services
         public Roulette openRoulette(string idRoulette);
         public Roulette Close(string Id);
 
-        public Roulette Bet(string Id, BDataStructure request);
+        public Roulette betValues(string Id, BDataStructure request);
 
         public List<Roulette> GetAll();
     }
