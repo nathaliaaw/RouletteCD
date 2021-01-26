@@ -24,8 +24,8 @@ namespace RouletteCD.Services
             {
                 idRoulette = Guid.NewGuid().ToString(),
                 IsOpen = false,
-                OpenedAt = null,
-                ClosedAt = null
+                openedAt = null,
+                closedAt = null
             };
             rouletteRepository.Save(roulette);
             return roulette;
@@ -44,11 +44,11 @@ namespace RouletteCD.Services
                 throw new RouletteNotFound();
             }
 
-            if (roulette.OpenedAt != null)
+            if (roulette.openedAt != null)
             {
                 throw new NotAllowedOpenException();
             }
-            roulette.OpenedAt = DateTime.Now;
+            roulette.openedAt = DateTime.Now;
             roulette.IsOpen = true;
             return rouletteRepository.Update(idRoulette, roulette);
         }
@@ -60,11 +60,11 @@ namespace RouletteCD.Services
             {
                 throw new RouletteNotFound();
             }
-            if (roulette.ClosedAt != null)
+            if (roulette.closedAt != null)
             {
                 throw new NotAllowedClosedException();
             }
-            roulette.ClosedAt = DateTime.Now;
+            roulette.closedAt = DateTime.Now;
             roulette.IsOpen = false;
             return rouletteRepository.Update(Id, roulette);
         }
@@ -85,10 +85,11 @@ namespace RouletteCD.Services
             {
                 throw new RouletteClosedException();
             }
-            roulette.board.Add("numberBet", request.numberBet.ToString());
-            roulette.board.Add("moneyBet", request.moneyBet.ToString());
-            roulette.board.Add("colorBet", request.colorBet);
-            roulette.board.Add("UserId", request.UserId);
+
+            //List<BDataStructure> parts = new List<BDataStructure>();
+
+            //parts.Add(new BDataStructure() { numberBet = request.numberBet, moneyBet=request.moneyBet, colorBet=request.colorBet,UserId=request.UserId});
+            roulette.board.Add(request);
 
             return rouletteRepository.Update(roulette.idRoulette, roulette);
         }
