@@ -8,17 +8,11 @@ namespace RouletteCD.Models
     public class Roulette
     {
         public string idRoulette { get; set; }
-
         public bool IsOpen { get; set; } = false;
-
-        public DateTime? OpenedAt { get; set; }
-
-        public DateTime? ClosedAt { get; set; }
-
-        public List<ResultBet>? Result { get; set; }
-
-        public IDictionary<string,string> board { get; set; } = new Dictionary<string, string>();
-        
+        public DateTime? openedAt { get; set; }
+        public DateTime? closedAt { get; set; }        
+        public IDictionary<string, string> result { get; set; } = new Dictionary<string, string>();        
+        public List<BDataStructure>? board { get; set; } = new List<BDataStructure>();
 
     }
 }
