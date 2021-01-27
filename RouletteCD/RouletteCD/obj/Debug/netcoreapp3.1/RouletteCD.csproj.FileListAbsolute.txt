@@ -39,3 +39,4 @@ C:\Users\natia\Documents\Roulette\RouletteCD\RouletteCD\RouletteCD\obj\Debug\net
 C:\Users\natia\Documents\Roulette\RouletteCD\RouletteCD\RouletteCD\obj\Debug\netcoreapp3.1\RouletteCD.dll
 C:\Users\natia\Documents\Roulette\RouletteCD\RouletteCD\RouletteCD\obj\Debug\netcoreapp3.1\RouletteCD.pdb
 C:\Users\natia\Documents\Roulette\RouletteCD\RouletteCD\RouletteCD\obj\Debug\netcoreapp3.1\RouletteCD.genruntimeconfig.cache
+C:\Users\natia\Documents\Roulette\RouletteCD\RouletteCD\RouletteCD\obj\Debug\netcoreapp3.1\RouletteCD.csprojAssemblyReference.cache
