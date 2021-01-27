@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using RouletteCD.Exceptions;
 using RouletteCD.Models;
 using RouletteCD.InterfaceCache;
@@ -53,9 +52,9 @@ namespace RouletteCD.Services
             return rouletteRepository.Update(idRoulette, roulette);
         }
 
-        public Roulette Close(string Id)
+        public Roulette closeRoulette(string idRoulette)
         {
-            Roulette roulette = rouletteRepository.GetById(Id);
+            Roulette roulette = rouletteRepository.GetById(idRoulette);
             if (roulette == null)
             {
                 throw new RouletteNotFound();
@@ -66,7 +65,20 @@ namespace RouletteCD.Services
             }
             roulette.closedAt = DateTime.Now;
             roulette.IsOpen = false;
-            return rouletteRepository.Update(Id, roulette);
+            var randomNumber = new Random().Next(0, 36);
+            randomNumber = 5;
+            List<ResultBet> parts = new List<ResultBet>();
+
+
+            for (int i=0;i < roulette.board.Count();i++)
+            {
+                if (roulette.board[i].numberBet == randomNumber) ;
+                {
+                    var moneyBetWinner = roulette.board[i].moneyBet*5;
+                    roulette.result.Add(new ResultBet() { userIdBet = roulette.board[i].UserId, moneyEarning= moneyBetWinner, numberWinner=randomNumber,message="Winner!" });
+                }
+            }       
+            return rouletteRepository.Update(idRoulette, roulette);
         }
 
         public Roulette betValues(string Id,  BDataStructure request)
@@ -85,12 +97,7 @@ namespace RouletteCD.Services
             {
                 throw new RouletteClosedException();
             }
-
-            //List<BDataStructure> parts = new List<BDataStructure>();
-
-            //parts.Add(new BDataStructure() { numberBet = request.numberBet, moneyBet=request.moneyBet, colorBet=request.colorBet,UserId=request.UserId});
             roulette.board.Add(request);
-
             return rouletteRepository.Update(roulette.idRoulette, roulette);
         }
 
