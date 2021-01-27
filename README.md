@@ -1,7 +1,7 @@
 # RouletteCD
 
 Puertos
-1.Creación ruleta  ~~~
+«1.Creación ruleta »
 [POST] http://localhost:{{port}}/api/roulette &nbsp;
 2. Abrir apuesta
 [PUT] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/openRoulette
