@@ -11,7 +11,7 @@ namespace RouletteCD.Services
         public Roulette Find(string Id);
 
         public Roulette openRoulette(string idRoulette);
-        public Roulette Close(string Id);
+        public Roulette closeRoulette(string idRoulette);
 
         public Roulette betValues(string Id, BDataStructure request);
 
