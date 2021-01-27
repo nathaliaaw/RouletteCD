@@ -7,7 +7,7 @@ Puertos
 [PUT] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/openRoulette
 3. Realizar apuesta
 [POST] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/betValues
-
+~~~
   BODY
   {
     "numberBet":2,  --Numero que se apuesta
