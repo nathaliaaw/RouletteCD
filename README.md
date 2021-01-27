@@ -1,7 +1,7 @@
 # RouletteCD
 
 Puertos
-1.Creación ruleta
+1.Creación ruleta  ~~~
 [POST] http://localhost:{{port}}/api/roulette &nbsp;
 2. Abrir apuesta
 [PUT] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/openRoulette
@@ -15,6 +15,7 @@ Puertos
     "colorBet":"R", -- R-Rojo, N-Negro
     "UserId":"Usuario"  --Nombre del usuario  
   }
+  ~~~
 4.Cerrar ruleta y conocer ganador
 [PUT] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/closeRoulette
 5. Consultar todas las ruletas y apuestas realizadas
