@@ -20,3 +20,16 @@ Puertos
 [PUT] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/closeRoulette <br/>
 5. Consultar todas las ruletas y apuestas realizadas <br/>
 [GET] http://localhost:{{port}}/api/roulette <br/>
+</br>
+ Para usar Redis descargar el .zip https://github.com/MicrosoftArchive/redis/releases?after=win-2.8.2101 <br/>
+ Luego descomprimir el .zip </br> 
+ Luego ejecutar el redis-cli.exe </br>
+ Luego ejecutar redis-server.exe </br>
+ </br>
+ Para limpiar el cache de la aplicacion usar la terminal redis-cli escribir --> flushhall
+ </br>
+ </br>
+ 
+ 
+ 
+ 
