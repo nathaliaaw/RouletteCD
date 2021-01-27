@@ -2,7 +2,7 @@
 
 Puertos
 «1.Creación ruleta »
-[POST] http://localhost:{{port}}/api/roulette &nbsp;
+[POST] http://localhost:{{port}}/api/roulette 
 2. Abrir apuesta
 [PUT] http://localhost:{{port}}/api/roulette/{{IdRouleta}}/openRoulette
 3. Realizar apuesta
