@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using RouletteCD.DataStructure;
 using RouletteCD.Models;
 using RouletteCD.Services;
@@ -51,12 +47,12 @@ namespace RouletteCD.Controllers
             }
         }
 
-        [HttpPut("{id}/close")]
-        public IActionResult Close([FromRoute(Name = "id")] string id)
+        [HttpPut("{idRoulette}/closeRoulette")]
+        public IActionResult closeRoulette([FromRoute(Name = "idRoulette")] string idRoulette)
         {
             try
             {
-                Roulette roulette = rouletteService.Close(id);
+                Roulette roulette = rouletteService.closeRoulette(idRoulette);
                 return Ok(roulette);
             }
             catch (Exception e)
